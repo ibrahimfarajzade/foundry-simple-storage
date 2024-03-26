@@ -1,66 +1,35 @@
-## Foundry
+# Foundry Simple Storage
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This project contains a simple Solidity smart contract called `SimpleStorage`. It's a basic example demonstrating how to store and retrieve data on the Ethereum blockchain.
 
-Foundry consists of:
+## Features
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+### SimpleStorage.sol
 
-## Documentation
+The `SimpleStorage` contract contains the following:
 
-https://book.getfoundry.sh/
+- **State Variables:**
+  - `myFavoriteNumber`: A uint256 variable to store a favorite number.
+  - `listOfPeople`: An array of `Person` structs.
+  - `nameToFavoriteNumber`: A mapping from names to favorite numbers.
 
-## Usage
+- **Structs:**
+  - `Person`: A struct representing a person with a favorite number and a name.
 
-### Build
+- **Functions:**
+  - `store(uint256 _favoriteNumber)`: Stores the provided favorite number.
+  - `retrieve()`: Retrieves the stored favorite number.
+  - `addPerson(string memory _name, uint256 _favoriteNumber)`: Adds a person to the list with their favorite number and name.
 
-```shell
-$ forge build
-```
+### DeploySimpleStorage.sol
 
-### Test
+This contract is used to deploy an instance of the `SimpleStorage` contract.
 
-```shell
-$ forge test
-```
+## Smart Contract Details
 
-### Format
+- **Solidity Version**: 0.8.19
+- **License**: MIT
 
-```shell
-$ forge fmt
-```
+## License
 
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
